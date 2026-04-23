@@ -25,6 +25,6 @@ jobs:
             
             - name: Esegui test
               run: |
-                pytest --cov. --cov-branch --cov-report-term-missing  
+                pytest --cov=. --cov-branch --cov-report-term-missing  
                  
     
