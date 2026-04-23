@@ -1,0 +1,30 @@
+name: Esempio di validazione
+
+#quando deve partire il workflow
+on: [push]
+
+jobs:
+    test:
+        # ambiente di esecuzione -> sistema operativo
+        runs-on: ubuntu-latest
+        # passi da eseguire
+        steps:
+            # scarica codice sorgente del repository
+            - name: Scarica Codice dal repo
+              uses: actions/checkout@v4 # meglio v4 di v2 perché è più veloce e supporta più funzionalità
+
+            - name: Installa Python 3.12
+              uses: actions/setup-python@v5
+              with:
+                python-version: 3.12
+
+            - name: Installa dipendenze # 1a cosa aggiornare pip 
+              run: |
+                    python -m pip install --upgrade pip 
+                    pip install -r requirements.txt
+            
+            - name: Esegui test
+              run: |
+                pytest --cov. --cov-branch --cov-report-term-missing  
+                 
+    
