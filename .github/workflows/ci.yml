@@ -19,12 +19,12 @@ jobs:
                 python-version: 3.12
 
             - name: Installa dipendenze # 1a cosa aggiornare pip 
-              run: |
+              run: |https://github.com/Stef-2612/progetto_git
                     python -m pip install --upgrade pip 
                     pip install -r requirements.txt
             
             - name: Esegui test
               run: |
-                pytest --cov=. --cov-branch --cov-report-term-missing  
+                pytest --cov=. --cov-branch --cov-report=term-missing  
                  
     
