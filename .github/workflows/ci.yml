@@ -19,7 +19,7 @@ jobs:
                 python-version: 3.12
 
             - name: Installa dipendenze # 1a cosa aggiornare pip 
-              run: |https://github.com/Stef-2612/progetto_git
+              run: |
                     python -m pip install --upgrade pip 
                     pip install -r requirements.txt
             
