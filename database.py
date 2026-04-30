@@ -1,5 +1,9 @@
-API_KEY_AMAZON = "AKIA-SUPER-SEGRETA-12345"
-DB_PASSWORD = "PasswordRoot123!"
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+DB_PASSWORD = os.getenv("DB_PASSWORD")
+API_KEY_AMAZON = os.getenv("API_KEY_AMAZON")
 
 def connect_db():
     print (f"Connnessione in corso {DB_PASSWORD}")
